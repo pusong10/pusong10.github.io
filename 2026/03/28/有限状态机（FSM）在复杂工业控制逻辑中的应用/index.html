@@ -27,7 +27,7 @@
 <meta property="og:description" content="1. 业务背景与挑战在处理串口或 TCP 流式数据时，开发者常遇到“粘包”或“断包”。传统实现使用 List&lt;byte&gt; 配合 RemoveRange 不断裁切缓冲区。这种方式存在三大痛点：  内存抖动： 频繁创建数组和挪动数据，触发频繁的 GC。 容错差：遇到干扰产生的杂讯时，往往会丢弃整包数据。 逻辑耦合：解析逻辑混杂在数据接收循环中，难以维护。  有限状态机（FSM） 将解析逻辑">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-28T11:48:45.000Z">
-<meta property="article:modified_time" content="2026-03-29T10:10:22.294Z">
+<meta property="article:modified_time" content="2026-03-29T10:13:19.041Z">
 <meta property="article:author" content="蒲松">
 <meta property="article:tag" content="FSM">
 <meta name="twitter:card" content="summary_large_image">
