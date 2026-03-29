@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /about/        # 禁止抓取“关于我”页面
+Disallow: /downloads/    # 禁止抓取附件目录
