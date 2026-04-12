@@ -27,7 +27,7 @@
 <meta property="og:description" content="1. 业务背景与挑战在工业自动化场景中，上位机需要同时处理多个任务:  高频采集: 硬件每秒推送成千上万个字节。 复杂解析: 原始字节流需要经过复杂的协议转换（如 FSM 状态机处理）。 实时存储: 原始数据需无损写入磁盘。 流畅显示: UI 必须保持 60 帧刷新，不能因后台计算而卡顿。  如果将这些逻辑写在一个循环里，轻则界面假死，重则由于处理太慢导致缓冲区溢出、数据丢失。 2. 四级流水线架">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-23T00:44:54.000Z">
-<meta property="article:modified_time" content="2026-04-12T07:35:46.836Z">
+<meta property="article:modified_time" content="2026-04-12T07:55:22.551Z">
 <meta property="article:author" content="蒲松">
 <meta property="article:tag" content="Channel">
 <meta name="twitter:card" content="summary_large_image">
@@ -380,6 +380,16 @@
           <article class="post-content mx-auto">
             <h1 id="seo-header">基于 Channel 的高性能四级数据流水线设计</h1>
             
+              <p id="updated-time" class="note note-info" style="display: none">
+                
+                  
+                    本文最后更新于 2026-04-12T15:55:22+08:00
+                  
+                  
+
+                
+              </p>
+            
             
               <div class="markdown-body">
                 
@@ -669,6 +679,33 @@
   
 
 
+
+
+  
+<script>
+  var relativeDate = function() {
+    var updatedTime = document.getElementById('updated-time');
+    if (updatedTime) {
+      var text = updatedTime.textContent;
+      var reg = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})/;
+      var matchs = text.match(reg);
+      if (matchs) {
+        var relativeTime = moment(matchs[0]).fromNow();
+        updatedTime.textContent = text.replace(reg, relativeTime);
+      }
+      updatedTime.style.display = '';
+    }
+  };
+  Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/moment.min.js', function() {
+    if (!'zh-cn'.startsWith('en')) {
+      Fluid.utils.createScript('https://lib.baomitu.com/moment.js/2.29.4/locale/zh-cn.min.js', function() {
+        relativeDate();
+      });
+    } else {
+      relativeDate();
+    }
+  });
+</script>
 
 
   
